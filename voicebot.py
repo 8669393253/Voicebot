@@ -2,7 +2,6 @@ import subprocess
 import sys
 
 subprocess.run([sys.executable, "-m", "pip", "list"])
-subprocess.run([sys.executable, "-m", "pip", "install", "gtts"], check=True)
 
 import os
 import json

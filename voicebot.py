@@ -6,26 +6,39 @@ import json
 import streamlit as st
 
 import os
+
 os.system("pip install --no-cache-dir --user gtts")
 sys.path.append(os.path.expanduser("~/.local/lib/python3.12/site-packages"))
 from gtts import gTTS
 import base64
 from io import BytesIO
 
-# Streamlit page configurations
-st.set_page_config(
-    page_title="🤖 Llama 3.1 Chatbot",
-    page_icon="🖪",
-    layout="wide"
-)
+# # Streamlit page configurations
+# st.set_page_config(
+#     page_title="🤖 Llama 3.1 Chatbot",
+#     page_icon="🖪",
+#     layout="wide"
+# )
 
-# Load configuration data
+# # Load configuration data
+# working_dir = os.path.dirname(os.path.abspath(__file__))
+# config_data = json.load(open(f"{working_dir}/config.json"))
+# GROQ_API_KEY = config_data["GROQ_API_KEY"]
+# os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+
+# client = Groq()
+
 working_dir = os.path.dirname(os.path.abspath(__file__))
 config_data = json.load(open(f"{working_dir}/config.json"))
-GROQ_API_KEY = config_data["GROQ_API_KEY"]
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
-client = Groq()
+# ✅ Get API Key Correctly
+GROQ_API_KEY = config_data.get("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    st.error("GROQ_API_KEY not found in config.json!")
+    st.stop()
+
+# ✅ Initialize Groq Client Correctly
+client = Groq(api_key=GROQ_API_KEY)
 
 
 # Initialize session state variables

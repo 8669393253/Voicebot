@@ -1,1 +1,1 @@
-python3-pip
+python-3.10

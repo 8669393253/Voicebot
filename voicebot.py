@@ -1,10 +1,7 @@
-
 import subprocess
 import sys
 
-# Force install groq before running the app
-import groq  # Now it should work!
-
+subprocess.run([sys.executable, "-m", "pip", "list"])
 
 import os
 import json

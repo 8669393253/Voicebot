@@ -9,7 +9,8 @@ import streamlit as st
 
 import os
 
-subprocess.run([sys.executable, "-m", "pip", "install", "gtts"])
+subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir", "gtts"])
+
 from gtts import gTTS
 import base64
 from io import BytesIO

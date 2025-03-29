@@ -1,7 +1,7 @@
 import os
 import json
 import streamlit as st
-from groq import Groq
+import groq
 from gtts import gTTS
 import base64
 from io import BytesIO
@@ -19,7 +19,7 @@ config_data = json.load(open(f"{working_dir}/config.json"))
 GROQ_API_KEY = config_data["GROQ_API_KEY"]
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
-client = Groq()
+client = groq.Groq(api_key="your_api_key")
 
 # Initialize session state variables
 if "chat_history" not in st.session_state:

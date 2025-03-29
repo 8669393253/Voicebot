@@ -1,8 +1,6 @@
 import subprocess
 import sys
 
-subprocess.run([sys.executable, "-m", "pip", "list"])
-
 import os
 import json
 import streamlit as st

@@ -6,6 +6,7 @@ import json
 import streamlit as st
 
 import os
+os.system("pip install --no-cache-dir --user gtts")
 from gtts import gTTS
 import base64
 from io import BytesIO

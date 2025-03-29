@@ -3,8 +3,6 @@ import subprocess
 import sys
 
 # Force install groq before running the app
-subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir", "groq"], check=True)
-
 import groq  # Now it should work!
 
 

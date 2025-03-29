@@ -7,6 +7,7 @@ import streamlit as st
 
 import os
 os.system("pip install --no-cache-dir --user gtts")
+sys.path.append(os.path.expanduser("~/.local/lib/python3.12/site-packages"))
 from gtts import gTTS
 import base64
 from io import BytesIO

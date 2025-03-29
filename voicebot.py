@@ -1,7 +1,12 @@
+import subprocess
+subprocess.run(["pip", "install", "groq"], check=True)
+
+import groq  # Now import should work!
+
 import os
 import json
 import streamlit as st
-from groq import Groq
+
 from gtts import gTTS
 import base64
 from io import BytesIO
